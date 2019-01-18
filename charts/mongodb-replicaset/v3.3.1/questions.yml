@@ -80,6 +80,25 @@ questions:
     type: password
     label: MongoDB Admin Password
     required: true
+- variable: service.type
+  default: "ClusterIP"
+  description: "MongoDB Kubernetes Service type"
+  type: enum
+  group: "Service Settings"
+  options:
+    - "ClusterIP"
+    - "NodePort"
+  required: true
+  label: MongoDB Service Type
+  show_subquestion_if: "NodePort"
+  subquestions:
+  - variable: service.nodePort
+    default: ""
+    description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
+    type: int
+    min: 30000
+    max: 32767
+label: Service NodePort number
 - variable: persistentVolume.enabled
   default: false
   description: "Enable persistent volume for MongoDB"
