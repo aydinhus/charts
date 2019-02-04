@@ -112,18 +112,6 @@ livenessProbe:
   failureThreshold: 3
   periodSeconds: 10
   successThreshold: 1
-  
-  ## Test
-service:
-  annotations: {}
-  type: ClusterIP
-  # clusterIP: None
-  port: 27017
-
-  ## Specify the nodePort value for the LoadBalancer and NodePort service types.
-  ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
-  ##
-# nodePort:
 
 # whether run helm test or nnot
 runtest: false
