@@ -2,25 +2,6 @@ categories:
 - Database
 - NoSQL
 questions:
-- variable: service.type
-  default: "ClusterIP"
-  description: "MongoDB Kubernetes Service type"
-  type: enum
-  group: "Service Settings"
-  options:
-    - "ClusterIP"
-    - "NodePort"
-  required: true
-  label: MongoDB Service Type
-  show_subquestion_if: "NodePort"
-  subquestions:
-  - variable: service.nodePort
-    default: ""
-    description: "NodePort port number(to set explicitly, choose port between 30000-32767)"
-    type: int
-    min: 30000
-    max: 32767
-    label: Service NodePort number
 - variable: defaultImage
   default: true
   description: "Use default Docker images"
@@ -117,4 +98,4 @@ questions:
     default: ""
     description: "If unndefined or null, uses the default StorageClass. Defaults to null."
     type: storageclass
-    label: Storage Class for MongoDB
+label: Storage Class for MongoDB
